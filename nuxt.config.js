@@ -13,7 +13,9 @@ module.exports = {
 
     auth: {
         strategies: {
+            local: {
 
+            }
         }
     },
 
