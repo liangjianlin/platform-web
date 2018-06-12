@@ -7,6 +7,14 @@ module.exports = {
         '@nuxtjs/dotenv'
     ],
 
+    plugins: ['~/plugins/element-ui'],
+
+    css: ['element-ui/lib/theme-chalk/index.css'],
+
+    build: {
+        vendor: ['~/plugins/element-ui']
+    },
+
     axios: {
 
     },
@@ -14,7 +22,9 @@ module.exports = {
     auth: {
         strategies: {
             local: {
-
+                endpoints: {
+                    user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+                }
             }
         }
     },

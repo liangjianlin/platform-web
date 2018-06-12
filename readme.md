@@ -8,3 +8,4 @@
     - @nuxtjs/axios
     - @nuxtjs/auth
     - @nuxtjs/dotenv
+    - element-ui@2.4.1
