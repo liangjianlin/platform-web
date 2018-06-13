@@ -4,7 +4,8 @@ module.exports = {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/auth',
-        '@nuxtjs/dotenv'
+        '@nuxtjs/dotenv',
+        '@nuxtjs/proxy'
     ],
 
     plugins: ['~/plugins/element-ui'],
@@ -20,9 +21,13 @@ module.exports = {
     },
 
     auth: {
+        redirect: {
+          callback: '/callback'
+        },
         strategies: {
             local: {
                 endpoints: {
+                    login: { url: '/api/auth/login', method: 'post', propertyName: 'token'},
                     user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
                 }
             }
@@ -31,5 +36,12 @@ module.exports = {
 
     router: {
         middleware: ['auth']
+    },
+
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: { '^/api' : '/'}
+      }
     }
 }

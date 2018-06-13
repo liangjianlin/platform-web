@@ -8,4 +8,5 @@
     - @nuxtjs/axios
     - @nuxtjs/auth
     - @nuxtjs/dotenv
+    - @nuxtjs/proxy
     - element-ui@2.4.1
