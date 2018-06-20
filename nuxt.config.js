@@ -22,20 +22,22 @@ module.exports = {
 
     auth: {
         redirect: {
-          callback: '/callback'
+          logout: '/login',
+          login: '/login',
+          home: '/main'
         },
         strategies: {
             local: {
                 endpoints: {
-                    login: { url: '/api/auth/login', method: 'post', propertyName: 'token'},
-                    user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+                    login: { url: '/api/auth/login', method: 'post', propertyName: 'user' }
                 }
             }
         }
     },
 
     router: {
-        middleware: ['auth']
+      base: '/web/',
+      middleware: ['auth']
     },
 
     proxy: {
