@@ -10,3 +10,4 @@
     - @nuxtjs/dotenv
     - @nuxtjs/proxy
     - element-ui@2.4.1
+    - js-sha1

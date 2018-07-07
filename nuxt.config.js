@@ -8,7 +8,10 @@ module.exports = {
         '@nuxtjs/proxy'
     ],
 
-    plugins: ['~/plugins/element-ui'],
+    plugins: [
+        '~/plugins/element-ui',
+        '~/plugins/axios'
+    ],
 
     css: ['element-ui/lib/theme-chalk/index.css'],
 
@@ -17,7 +20,9 @@ module.exports = {
     },
 
     axios: {
-
+      proxy: true,
+      host: '127.0.0.1',
+      port: 8080
     },
 
     auth: {
@@ -46,4 +51,5 @@ module.exports = {
         pathRewrite: { '^/api' : '/'}
       }
     }
+
 }
