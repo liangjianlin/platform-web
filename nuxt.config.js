@@ -25,24 +25,8 @@ module.exports = {
       port: 8080
     },
 
-    auth: {
-        redirect: {
-          logout: '/login',
-          login: '/login',
-          home: '/main'
-        },
-        strategies: {
-            local: {
-                endpoints: {
-                    login: { url: '/api/auth/login', method: 'post', propertyName: 'user' }
-                }
-            }
-        }
-    },
-
     router: {
-      base: '/web/',
-      middleware: ['auth']
+      base: '/web/'
     },
 
     proxy: {

@@ -12,7 +12,6 @@
                     <el-button @click="login">登录</el-button>
                 </el-form-item>
             </el-form>
-            <h5>{{ $auth.$state.loggedIn ? 'Logged In' : 'Guest' }}</h5>
         </el-col>
     </el-row>
 </template>
@@ -30,14 +29,13 @@
       methods: {
         async login() {
           this.error = null
-          return this.$auth
-              .loginWith('local', {
-                data: {
+          await this.$axios
+              .post('/api/auth/login', {
                   username: this.loginForm.username,
                   password: this.loginForm.password
                 }
-              }).then(() => {
-                //this.$router.push({ path: '/main' })
+              ).then(() => {
+                this.$router.push({ path: '/main' })
               })
               .catch(e => {
                 this.error = e + ''

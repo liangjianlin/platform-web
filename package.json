@@ -24,7 +24,9 @@
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/dotenv": "^1.1.1",
     "@nuxtjs/proxy": "^1.2.4",
+    "crypto": "^1.0.1",
     "element-ui": "^2.4.1",
+    "js-md5": "^0.7.3",
     "js-sha1": "^0.6.0",
     "nuxt": "^1.4.1"
   },

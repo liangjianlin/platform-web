@@ -1,7 +1,6 @@
 <template>
     <div>
         <el-button @click="logout">退出</el-button>
-        <h5>{{ $auth.$state.loggedIn ? 'Logged In' : 'Guest' }}</h5>
         <h5>{{ user }}</h5>
     </div>
 </template>
@@ -13,10 +12,13 @@
             user: this.$auth.user
         }
       },
+      created: function() {
+        this.$axios.get('/api/auth/user?userId=123')
+      },
       methods: {
         logout() {
-          this.$auth.logout()
-          //this.$router.push({ path: '/login' })
+          //this.$auth.logout()
+          this.$router.push({ path: '/login' })
         }
       }
     }
